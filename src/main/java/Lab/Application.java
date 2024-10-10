@@ -1,6 +1,8 @@
 package Lab;
 
 import Lab.Beans.ScopedBean;
+
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -39,6 +41,7 @@ public class Application {
      * TODO: correct the following code so that a new ScopedBean is instantiated every time the labBean is requested.
      */
     @Bean
+    @Scope("prototype")
     public ScopedBean labBean(){
         return new ScopedBean();
     }
